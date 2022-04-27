@@ -22,3 +22,25 @@ const userSchema = new Schema(
     },
     friends: [
       {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ],
+    likedMovies: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Movie',
+      validate: (arr) => {
+        return arr.filter(v => v === null).length === 0;
+      }
+    }],
+    dislikedMovies: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Movie',
+      validate: (arr) => {
+        return arr.filter(v => v === null).length === 0;
+      }
+    }], 
+
+  },
+
+  // Now this needs to be set to be used in the following virtual
