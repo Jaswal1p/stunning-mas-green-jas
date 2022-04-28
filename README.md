@@ -25,3 +25,5 @@ so I first did npm init
 * Added bcrypt: npm install bcrypt
 
 * installed mongoose: npm install mongoose
+
+* installed jsonwebtoken: npm install jsonwebtoken
