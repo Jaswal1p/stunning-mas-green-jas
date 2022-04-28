@@ -19,3 +19,5 @@ so I first did npm init
 * and finally : npm install
 
 * Then I added apollo server :  npm i apollo-server-express graphql
+
+* Added express : npm install express
