@@ -28,4 +28,4 @@ so I first did npm init
 
 * installed jsonwebtoken: npm install jsonwebtoken
 
-* installed faker & nodemon devdependencies: npm audit fix --force  followed by npm install --save-dev nodemon
+* installed faker & nodemon devdependencies: npm install faker --save-dev followed by npm audit fix --force  & followed by npm install --save-dev nodemon
