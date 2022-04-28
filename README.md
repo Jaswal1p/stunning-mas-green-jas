@@ -23,3 +23,5 @@ so I first did npm init
 * Added express : npm install express
 
 * Added bcrypt: npm install bcrypt
+
+* installed mongoose: npm install mongoose
