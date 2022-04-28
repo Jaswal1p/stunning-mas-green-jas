@@ -27,3 +27,5 @@ so I first did npm init
 * installed mongoose: npm install mongoose
 
 * installed jsonwebtoken: npm install jsonwebtoken
+
+* installed faker & nodemon devdependencies: npm audit fix --force  followed by npm install --save-dev nodemon
