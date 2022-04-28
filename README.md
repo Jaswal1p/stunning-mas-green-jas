@@ -21,3 +21,5 @@ so I first did npm init
 * Then I added apollo server :  npm i apollo-server-express graphql
 
 * Added express : npm install express
+
+* Added bcrypt: npm install bcrypt
