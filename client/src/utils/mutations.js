@@ -143,3 +143,14 @@ export const ADD_MOVIE = gql`
         }
     }
 `;
+
+export const LIKE_MOVIE = gql`
+    mutation likeMovie($movieId: ID!) {
+        likeMovie(movieId: $movieId) {
+            _id
+            username
+            email
+            friendCount
+        }
+    }
+`;
