@@ -85,3 +85,46 @@ export const LOGIN_USER =gql`
         }
     }
 `;
+
+export const ADD_FRIEND =gql`
+    mutation addFriend($friendId: ID!) {
+        addFriend(friendId: $friendId) {
+            token
+                user{
+                    _id
+                    username
+                    email
+                    friendCount
+                    friends {
+                        _id
+                        username
+                        email
+                        friendCount
+                    }
+                    likedMovies {
+                        _id
+                        externalMovieId
+                        rating
+                        voteCount
+                        title
+                        overview
+                        releaseDate
+                        poster
+                        trailer
+                        likedUsers {
+                            _id
+                            username
+                            email
+                            friendCount
+                        }
+                        dislikedUsers {
+                            _id
+                            username
+                            email
+                            friendCount
+                        }
+                    }
+                }
+        }
+    }
+`;
