@@ -47,13 +47,20 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex-column justify-flex-start min-100-vh">
-        <Header />
-        <div className="container">
-          <Home />
-        </div>
-        <Footer />
-      </div>
+      <Router>
+        <>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={SearchMovies} />
+
+          <Route exact path='/saved' component={SavedMovies} />
+
+          <Route render={() => <h1 className='display-2'>Wrong Page</h1>} />
+        
+          </Switch>
+        </>
+      </Router>
+
     </ApolloProvider>
   );
 }
