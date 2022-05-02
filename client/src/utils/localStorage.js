@@ -13,4 +13,18 @@ export const getSavedMovieIds = () => {
       }
   };
 
-  
+  export const removeMovieId = (movieId) =>{
+      const savedMovieIds= localStorage.getItem('saved_movie')
+      ? JSON.parse(localStorage.getItem('saved_movie'))
+      : null;
+
+      if(!savedMovieIds){
+          return false;
+      }
+      const updatedSavedMovieIds = savedMovieIds?.filter((savedMovieId)=> savedMovieId !==movieId);
+      localStorage.setItem('saved_books', JSON.stringify(updatedSavedMovieIds));
+  }
+
+
+
+
