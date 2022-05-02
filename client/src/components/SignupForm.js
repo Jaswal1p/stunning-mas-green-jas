@@ -33,7 +33,7 @@ const SignupForm = () => {
         email: '',
         password:'',
     });
-};
+
 
 return (
     <>
