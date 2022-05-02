@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import SavedMovies from './pages/SavedMovies';
-import SearhMovies from './pages/SearchMovies';
+import SearchMovies from './pages/SearchMovies';
 
 
 
@@ -47,15 +47,6 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-<<<<<<< HEAD
-      <div className="flex-column justify-flex-start min-100-vh">
-        <Header />
-        <div className="container">
-          <Home />
-        </div>
-        <Footer />
-      </div>
-=======
       <Router>
         <>
         <Navbar />
@@ -70,7 +61,6 @@ function App() {
         </>
       </Router>
 
->>>>>>> 61e43e7240ab270f594126e6e9c459d8de359b22
     </ApolloProvider>
   );
 }

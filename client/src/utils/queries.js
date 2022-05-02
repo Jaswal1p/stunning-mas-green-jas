@@ -6,14 +6,8 @@ export const GET_USER = gql`
             _id
             username
             email
-            friendCount
-            friends {
-                _id
-                username
-                email
-                friendCount
-            }
-            movies {
+            movieCount
+            savedmovies {
                 _id
                 externalMovieId
                 rating
@@ -28,7 +22,7 @@ export const GET_USER = gql`
                 _id
                 username
                 email
-                friendCount
+                
             }
         }
     }
