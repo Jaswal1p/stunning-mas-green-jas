@@ -9,6 +9,12 @@ export const ADD_USER =gql`
                     username
                     email
                     friendCount
+                    friends {
+                        _id
+                        username
+                        email
+                        friendCount
+                    }
                     likedMovies {
                         _id
                         externalMovieId
@@ -19,6 +25,18 @@ export const ADD_USER =gql`
                         releaseDate
                         poster
                         trailer
+                        likedUsers {
+                            _id
+                            username
+                            email
+                            friendCount
+                        }
+                        dislikedUsers {
+                            _id
+                            username
+                            email
+                            friendCount
+                        }
                     }
                 }
         }
