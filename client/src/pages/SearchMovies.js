@@ -57,25 +57,112 @@ const SearchMovies = () => {
             image: movie.volumeInfo.imageLinks?.thumbnail || '',
         }));
 
-        setSearchedmovies(movieData);
+        setSearchedMovies(movieData);
         setSearchInput('');
         } catch (err) {
         console.error(err);
         }
-  };
+    };
 
-  
+    // create function to handle saving a movie to the database
+
+    const handleSaveMovie = async (movieId) => {
+         const movieToSave = searchedMovies.find((movie) => movie.movieId === movieId);
+
+         const token = Auth.loggedIn() ? Auth.getToken() : null;
+     
+         if (!token) {
+             return false;
+         }
+     
+         try {
+             // eslint-disable-next-line
+             const {data} = await saveMovie({
+                 variables: {input: movieToSave}
+             });
+             console.log(savedMovieIds)
+     
+             if (error) {
+                 throw new Error('Something went wrong!');
+             }
+     
+             setSavedMovieIds([...savedMovieIds, movieToSave.movieId]);
+         } catch (err) {
+             console.error(err);
+         }
+    };
     
 
+    return (
+        <>
+          <Jumbotron fluid className='text-light bg-dark'>
 
+            <Container>
 
+              <h1>Search for Movies!</h1>
+              <Form onSubmit={handleFormSubmit}>
+                    <Form.Row>
 
+                        <Col xs={12} md={8}>
+                                <Form.Control
+                                name='searchInput'
+                                value={searchInput}
+                                onChange={(e) => setSearchInput(e.target.value)}
+                                type='text'
+                                size='lg'
+                                placeholder='Search for a movie'
+                                />
+                        </Col>
+                        <Col xs={12} md={4}>
+                                <Button type='submit' variant='success' size='lg'>
+                                Submit Search
+                                </Button>
+                        </Col>
 
+                    </Form.Row>
+              </Form>
+            </Container>
 
+          </Jumbotron> 
 
+          <Container>
+        <h2>
+          {searchedMovies.length
+            ? `Viewing ${searchedMovies.length} results:`
+            : 'Search for a movie to begin'}
+        </h2>
+        <CardColumns>
+          {searchedMovies.map((movie) => {
+            return (
+              <Card key={movie.movieId} border='dark'>
+                {movie.image ? (
+                  <Card.Img src={movie.image} alt={`The cover for ${movie.title}`} variant='top' />
+                ) : null}
+                <Card.Body>
+                  <Card.Title>{movie.title}</Card.Title>
+                  <p className='small'>Authors: {movie.authors}</p>
+                  <Card.Text>{movie.description}</Card.Text>
+                  {Auth.loggedIn() && (
+                    <Button
+                      disabled={savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)}
+                      className='btn-block btn-info'
+                      onClick={() => handleSaveMovie(movie.movieId)}>
+                      {savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)
+                        ? 'This Movie has already been saved!'
+                        : 'Save this Movie!'}
+                    </Button>
+                  )}
+                </Card.Body>
+              </Card>
+            );
+          })}
+        </CardColumns>
 
+      </Container>
 
+        </>
+    );
 
+};
 
-
-}
+export default SearchMovies;
