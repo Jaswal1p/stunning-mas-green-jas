@@ -56,11 +56,11 @@ const SavedMovies = () => {
                     {userData.SavedMovies?.map((movie)=>{
                         return(
                             <Card key={movie.movieId} border='dark'>
-                                {movie.image ? <Card.Img src=movie={.image} alt={'The cover for ${movie.title}'} variant='top' /> : null}
+                            {movie.image ? <Card.Img src={movie.image} alt={`The cover for ${movie.title}`} variant='top' /> : null}
                                 <Card.Body>
                                     <Card.Title>{movie.title}</Card.Title>
-                                    <p className='small'>Authors: {book.authors}</p>
-                                    <Card.Text>{book.description}</Card.Text>
+                                    <p className='small'>Authors: {movie.authors}</p>
+                                    <Card.Text>{movie.description}</Card.Text>
                                     <button className='btn-block btn-danger' onClick={() => hangleDeleteMovie(movie.movieId)}>
                                     Delete this movie
                                     </button>
