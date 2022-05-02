@@ -63,5 +63,25 @@ return (
         <Form.Group>
             <Form.Control.Feedback type='invalid'>Email is required</Form.Control.Feedback>
         </Form.Group>
+
+        <Form.Group>
+            <Form.Label htmlFor='password'>password</Form.Label>
+            <Form.Control
+            type='password'
+            placeholder='Your password'
+            name='password'
+            onChange='handleInputChange'
+            value={userFormData.password}
+            required />
+            <Form.Control.Feedback type='invalid'>Password is required</Form.Control.Feedback>
+        </Form.Group>
+        <Button
+        disabled={!(userFormData.username && userFormData.email && userFormData.password)}
+        type='submit'
+        variant='success'>Submit</Button>
+        </form>
     </>
-)
+);
+}
+
+export default SignupForm;
