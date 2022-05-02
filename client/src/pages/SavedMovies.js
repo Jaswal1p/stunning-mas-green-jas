@@ -32,6 +32,46 @@ const SavedMovies = () => {
         }
 
     
+    };
+    if (loading) {
+        return <h2>LOADING...</h2>;
     }
 
-}
+    return (
+        <>
+        <Jumbotron fluid className='text-ligt bg-dark'>
+            <Container>
+                <h1>Viewing daved movies!</h1>
+            </Container>
+            
+            </Jumbotron>
+            <Container>
+                <h2>
+                    {userData.SavedMovies?.length} 
+                    ? 'Viewing ${userData.SavedMovies?.length} saved ${userData.SavedMovies?.length === 1 ? 'movie' : 'movies'};' :
+                    'You have not saved any movies'
+            
+                </h2>
+                <CardColumns>
+                    {userData.SavedMovies?.map((movie)=>{
+                        return(
+                            <Card key={movie.movieId} border='dark'>
+                                {movie.image ? <Card.Img src=movie={.image} alt={'The cover for ${movie.title}'} variant='top' /> : null}
+                                <Card.Body>
+                                    <Card.Title>{movie.title}</Card.Title>
+                                    <p className='small'>Authors: {book.authors}</p>
+                                    <Card.Text>{book.description}</Card.Text>
+                                    <button className='btn-block btn-danger' onClick={() => hangleDeleteMovie(movie.movieId)}>
+                                    Delete this movie
+                                    </button>
+
+                                </Card.Body>
+                                </Card>
+                        );
+                    })}
+                </CardColumns>
+            </Container>
+        </>
+    );
+
+};
