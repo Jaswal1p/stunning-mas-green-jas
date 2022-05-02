@@ -1,12 +1,13 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import {Jumbotron, Container, CradColumns, Card, Button} from 'react-bootstrap';
+import {Jumbotron, Container, CardColumns, Card, Button} from 'react-bootstrap';
 import {removeMovieId} from '../utils/localStorage';
 import {GET_USER} from '../utils/queries';
 import {useQuery, useMutation} from '@apollo/client';
 import {REMOVE_MOVIE} from '../utils/mutations'
 
 const SavedMovies = () => {
+    // eslint-disable-next-line
     const [ removeMovie, { error}] = useMutation(REMOVE_MOVIE);
     const {loading, data} = useQuery(GET_USER);
     console.log(loading, data)
@@ -20,10 +21,11 @@ const SavedMovies = () => {
         }
 
         try {
+            // eslint-disable-next-line
             const {data} = await removeMovie({
                 variables: { movieId}
             });
-        if (err){
+        if (error){
             throw new Error('Something is wrong!');
         }
         removeMovieId(movieId);
@@ -61,9 +63,9 @@ const SavedMovies = () => {
                                     <Card.Title>{movie.title}</Card.Title>
                                     <p className='small'>Authors: {movie.authors}</p>
                                     <Card.Text>{movie.description}</Card.Text>
-                                    <button className='btn-block btn-danger' onClick={() => hangleDeleteMovie(movie.movieId)}>
+                                    <Button className='btn-block btn-danger' onClick={() => handleDeleteMovie(movie.movieId)}>
                                     Delete this movie
-                                    </button>
+                                    </Button>
 
                                 </Card.Body>
                                 </Card>
@@ -75,3 +77,5 @@ const SavedMovies = () => {
     );
 
 };
+
+export default SavedMovies;

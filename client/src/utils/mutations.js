@@ -1,18 +1,89 @@
-import React from 'react';
+import gql from 'graphql-tag';
 
-import Auth from '../utils/auth';
+export const ADD_USER = gql`
+      mutation addUser($username: String!, $email!: String!, $password: String!) {
+            addUser(username: $username, email: $email, password: $password) {
+                token
+                    user {
+                        _id
+                        username
+                        email
+                        movieCount
+                        savedMovies {
+                            movieId
+                            title
+                            description
+                            image
+                            link
+                        }
+                    }
+            }
+      }
+`;
 
-import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
+
+export const LOGIN_USER = gql`
+      mutation login($email: String!, $password: String!) {
+            login(email: $email, password: $password) {
+                token
+                    user {
+                        _id
+                        username
+                        email
+                        movieCount
+                        savedMovies {
+                            movieId
+                            title
+                            description
+                            image
+                            link
+                        }
+                    }
+            }
+      }
+`;
 
 
-import { removeMovieId } from '../utils/localStorage';
+export const SAVE_MOVIE = gql`
+      mutation saveMovie($input: movieInput!) {
+            saveMovie(input: $input) {
+                token
+                    user {
+                        _id
+                        username
+                        email
+                        savedMovies {
+                            movieId
+                            title
+                            description
+                            image
+                            link
+                        }
+                    }
+            }
+      }
+`;
 
-import { GET_USER } from '../utils/queries';
 
-import { useQuery, useMutation } from '@apollo/client';
-
-import { REMOVE_MOVIE } from '../utils/mutations';
-
+export const REMOVE_MOVIE = gql`
+      mutation removeMovie($input: movieInput!) {
+            removeMovie(movieId: $movieId) {
+                token
+                    user {
+                        _id
+                        username
+                        email
+                        savedMovies {
+                            movieId
+                            title
+                            description
+                            image
+                            link
+                        }
+                    }
+            }
+      }
+`;
 
 
 
