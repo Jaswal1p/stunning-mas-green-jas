@@ -42,3 +42,46 @@ export const ADD_USER =gql`
         }
     }
 `;
+
+export const LOGIN_USER =gql`
+    mutation login($email: String!, $password: String!) {
+        login(email: $email, password: $password) {
+            token
+                user {
+                    _id
+                    username
+                    email
+                    friendCount
+                    friends {
+                        _id
+                        username
+                        email
+                        friendCount
+                    }
+                    likedMovies {
+                        _id
+                        externalMovieId
+                        rating
+                        voteCount
+                        title
+                        overview
+                        releaseDate
+                        poster
+                        trailer
+                        likedUsers {
+                            _id
+                            username
+                            email
+                            friendCount
+                        }
+                        dislikedUsers {
+                            _id
+                            username
+                            email
+                            friendCount
+                        }
+                    }
+                }
+        }
+    }
+`;
