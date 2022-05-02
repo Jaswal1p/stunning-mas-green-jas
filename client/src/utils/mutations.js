@@ -15,8 +15,4 @@ import { REMOVE_MOVIE } from '../utils/mutations';
 
 
 
-const SavedMovies = () {
-    const [removeMovie, {error }] = useMutation(REMOVE_MOVIE);
 
-    
-}
