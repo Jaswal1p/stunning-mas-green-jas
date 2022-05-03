@@ -11,7 +11,6 @@ export const GET_USER = gql`
                 _id
                 externalMovieId
                 rating
-                voteCount
                 title
                 overview
                 releaseDate

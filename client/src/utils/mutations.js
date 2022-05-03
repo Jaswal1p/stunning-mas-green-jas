@@ -22,38 +22,17 @@ export const LOGIN_USER = gql`
                 _id
                 username
                 email
-                likedMovies {
+                savedMovies {
                     _id
                     externalMovieId
+                    rating
                     title
                     overview
                     releaseDate
-                    rating
-                    voteCount
                     poster
                     trailer
-                    likedUsers {
-                        _id
-                        username
-                        email
-                    }
                 }
-                dislikedMovies{
-                    _id
-                    externalMovieId
-                    title
-                    overview
-                    releaseDate
-                    rating
-                    voteCount
-                    poster
-                    trailer
-                    likedUsers {
-                        _id
-                        username
-                        email
-                    }
-                }
+                
             }
         }
     }
@@ -87,11 +66,11 @@ export const SAVE_MOVIE = gql`
             username
             email
             savedMovies {
-                movie_Id
+                movieId
                 poster
                 overview
                 title
-                link
+                
             }
         }
     }
@@ -110,7 +89,7 @@ export const REMOVE_MOVIE = gql`
                             title
                             overview
                             poster
-                            link
+                            
                         }
                 
             }
