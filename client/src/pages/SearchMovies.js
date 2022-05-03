@@ -53,10 +53,10 @@ const SearchMovies = () => {
             movieId: movie.id,
             // authors: movie.volumeInfo.authors || ['No author to display'],
             title: movie.volumeInfo.title,
-            description: movie.volumeInfo.description,
-            image: movie.volumeInfo.imageLinks?.thumbnail || '',
+            overview: movie.volumeInfo.overview,
+            poster: movie.volumeInfo.posterLinks?.thumbnail || '',
         }));
-
+        console.log(movieData)
         setSearchedMovies(movieData);
         setSearchInput('');
         } catch (err) {
@@ -128,7 +128,7 @@ const SearchMovies = () => {
           <Container>
         <h2>
           {searchedMovies?.length
-            ? `Viewing ${searchedMovies.length} results:`
+            ? `Viewing ${searchedMovies?.length} results:`
             : 'Search for a movie to begin'}
         </h2>
         <div>
@@ -140,8 +140,8 @@ const SearchMovies = () => {
                 ) : null}
                 <Card.Body>
                   <Card.Title>{movie.title}</Card.Title>
-                  <p className='small'>Authors: {movie.authors}</p>
-                  <Card.Text>{movie.description}</Card.Text>
+                  {/* <p className='small'>Authors: {movie.authors}</p> */}
+                  <Card.Text>{movie.overview}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)}
