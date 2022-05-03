@@ -16,7 +16,7 @@ const SignupForm = () => {
     
     const handleInputChange = (event) => {
         const {name, value} = event.target;
-        setUserFormData({...userFormData, [name]: value});
+        setUserFormData({ ...userFormData, [name]: value });
     };
     
 
@@ -25,10 +25,10 @@ const SignupForm = () => {
     
     try {
         // eslint-disable-next-line
-        const { data} = await addUser({
+        const { data } = await addUser({
             variables:{...userFormData}
         });
-        Auth.login(data.addUser.Token);
+        Auth.login(data.addUser.token);
     } catch (e) {
         console.error(e);
         setShowAlert(true);
@@ -44,15 +44,16 @@ const SignupForm = () => {
     return (
         <>
         {/* This is needed for the validation functionality above */}
-        <form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
             <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
             Something went wrong with your signup!
             </Alert>
             <Form.Group>
-                <Form htmlFor='username'>Username</Form>
+                <Form.Label htmlFor='username'>Username</Form.Label>
                 <Form.Control
                 type='text'
-                placeholder='username'
+                placeholder='Your username'
+                name='username'
                 onChange={handleInputChange}
                 value={userFormData.username}
                 required />
@@ -76,7 +77,7 @@ const SignupForm = () => {
                 type='password'
                 placeholder='Your password'
                 name='password'
-                onChange='handleInputChange'
+                onChange={handleInputChange}
                 value={userFormData.password}
                 required />
                 <Form.Control.Feedback type='invalid'>Password is required</Form.Control.Feedback>
@@ -85,7 +86,7 @@ const SignupForm = () => {
             disabled={!(userFormData.username && userFormData.email && userFormData.password)}
             type='submit'
             variant='success'>Submit</Button>
-            </form>
+        </Form>
         </>
     );
 

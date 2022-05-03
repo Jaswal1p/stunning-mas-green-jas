@@ -51,7 +51,7 @@ const SearchMovies = () => {
 
         const movieData = items.map((movie) => ({
             movieId: movie.id,
-            authors: movie.volumeInfo.authors || ['No author to display'],
+            // authors: movie.volumeInfo.authors || ['No author to display'],
             title: movie.volumeInfo.title,
             description: movie.volumeInfo.description,
             image: movie.volumeInfo.imageLinks?.thumbnail || '',
