@@ -9,9 +9,9 @@ import { setContext } from '@apollo/client/link/context';
 
 // import  ApolloClient  from 'apollo-boost';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 import SavedMovies from './pages/SavedMovies';
 import SearchMovies from './pages/SearchMovies';
 
@@ -50,14 +50,14 @@ function App() {
       <Router>
         <>
         <Navbar />
-        <Switch>
+        <Routes>
           <Route exact path='/' component={SearchMovies} />
 
           <Route exact path='/saved' component={SavedMovies} />
 
           <Route render={() => <h1 className='display-2'>Wrong Page</h1>} />
         
-          </Switch>
+          </Routes>
         </>
       </Router>
 

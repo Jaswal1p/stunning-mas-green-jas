@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Auth from '../utils/auth';
-import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import { Container, Col, Form, Button, Card, } from 'react-bootstrap';
 
 import { searchTMDB } from '../utils/API';
 
@@ -95,7 +95,7 @@ const SearchMovies = () => {
 
     return (
         <>
-          <Jumbotron fluid className='text-light bg-dark'>
+          <div class="container-fluid bg-dark text-light">
 
             <Container>
 
@@ -123,7 +123,7 @@ const SearchMovies = () => {
               </Form>
             </Container>
 
-          </Jumbotron> 
+          </div> 
 
           <Container>
         <h2>
@@ -131,7 +131,7 @@ const SearchMovies = () => {
             ? `Viewing ${searchedMovies.length} results:`
             : 'Search for a movie to begin'}
         </h2>
-        <CardColumns>
+        <div>
           {searchedMovies.map((movie) => {
             return (
               <Card key={movie.movieId} border='dark'>
@@ -156,7 +156,7 @@ const SearchMovies = () => {
               </Card>
             );
           })}
-        </CardColumns>
+        </div>
 
       </Container>
 

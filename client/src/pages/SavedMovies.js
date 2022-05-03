@@ -1,6 +1,6 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import {Jumbotron, Container, CardColumns, Card, Button} from 'react-bootstrap';
+import { Container, Card, Button} from 'react-bootstrap';
 import {removeMovieId} from '../utils/localStorage';
 import {GET_USER} from '../utils/queries';
 import {useQuery, useMutation} from '@apollo/client';
@@ -41,12 +41,12 @@ const SavedMovies = () => {
 
     return (
         <>
-        <Jumbotron fluid className='text-ligt bg-dark'>
+        <div class="container-fluid bg-dark text-light">
             <Container>
-                <h1>Viewing daved movies!</h1>
+                <h1>Viewing saved movies!</h1>
             </Container>
             
-            </Jumbotron>
+        </div>
             <Container>
                 <h2>
                     {userData.SavedMovies?.length} 
@@ -54,7 +54,7 @@ const SavedMovies = () => {
                     'You have not saved any movies'
             
                 </h2>
-                <CardColumns>
+                <div>
                     {userData.SavedMovies?.map((movie)=>{
                         return(
                             <Card key={movie.movieId} border='dark'>
@@ -71,7 +71,7 @@ const SavedMovies = () => {
                                 </Card>
                         );
                     })}
-                </CardColumns>
+                </div>
             </Container>
         </>
     );

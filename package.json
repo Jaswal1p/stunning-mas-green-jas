@@ -23,5 +23,9 @@
   "homepage": "https://github.com/Jaswal1p/stunning-mas-green-jas#readme",
   "devDependencies": {
     "concurrently": "^7.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "react-bootstrap": "^2.3.1"
   }
 }
