@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Auth from '../utils/auth';
-import { Container, Col, Form, Button, Card, } from 'react-bootstrap';
+import { Jumbotron, Container, Col, Form, Button, Card, } from 'react-bootstrap';
 
 import { searchTMDB } from '../utils/API';
 
@@ -95,8 +95,8 @@ const SearchMovies = () => {
 
     return (
         <>
-          <div class="container-fluid bg-dark text-light">
-
+          {/* <div class="container-fluid bg-dark text-light"> */}
+          <Jumbotron fluid className='text-light bg-dark'>
             <Container>
 
               <h1>Search for Movies!</h1>
@@ -122,8 +122,8 @@ const SearchMovies = () => {
                     </Form.Row>
               </Form>
             </Container>
-
-          </div> 
+            </Jumbotron>
+          {/* </div>  */}
 
           <Container>
         <h2>
