@@ -49,7 +49,7 @@ const SearchMovies = () => {
 
         const { items } = await response.json();
 
-        const movieData = items.map((movie) => ({
+        const movieData = items?.map((movie) => ({
             movieId: movie.id,
             // authors: movie.volumeInfo.authors || ['No author to display'],
             title: movie.volumeInfo.title,
@@ -127,16 +127,16 @@ const SearchMovies = () => {
 
           <Container>
         <h2>
-          {searchedMovies.length
+          {searchedMovies?.length
             ? `Viewing ${searchedMovies.length} results:`
             : 'Search for a movie to begin'}
         </h2>
         <div>
-          {searchedMovies.map((movie) => {
+          {searchedMovies?.map((movie) => {
             return (
               <Card key={movie.movieId} border='dark'>
-                {movie.image ? (
-                  <Card.Img src={movie.image} alt={`The cover for ${movie.title}`} variant='top' />
+                {movie.poster ? (
+                  <Card.Img src={movie.poster} alt={`The cover for ${movie.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{movie.title}</Card.Title>
