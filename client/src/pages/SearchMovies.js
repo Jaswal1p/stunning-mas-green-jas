@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Auth from '../utils/auth';
-import { Jumbotron, Container, Col, Form, Button, Card, } from 'react-bootstrap';
+import { Jumbotron, Container, Col, Form, Button, Card } from 'react-bootstrap';
 
 import { searchTMDB } from '../utils/API';
 
@@ -47,14 +47,14 @@ const SearchMovies = () => {
             throw new Error('something went wrong!');
         }
 
-        const { items } = await response.json();
-
-        const movieData = items?.map((movie) => ({
+        const items = await response.json();
+        console.log(items)
+        const movieData = items?.results.map((movie) => ({
             movieId: movie.id,
             // authors: movie.volumeInfo.authors || ['No author to display'],
-            title: movie.volumeInfo.title,
-            overview: movie.volumeInfo.overview,
-            poster: movie.volumeInfo.posterLinks?.thumbnail || '',
+            title: movie.title,
+            overview: movie.overview,
+            poster: movie.poster_path || '',
         }));
         console.log(movieData)
         setSearchedMovies(movieData);
@@ -136,7 +136,7 @@ const SearchMovies = () => {
             return (
               <Card key={movie.movieId} border='dark'>
                 {movie.poster ? (
-                  <Card.Img src={movie.poster} alt={`The cover for ${movie.title}`} variant='top' />
+                  <Card.Img className="movie-image" src={'https://image.tmdb.org/t/p/w500'+movie.poster} alt={`The cover for ${movie.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{movie.title}</Card.Title>

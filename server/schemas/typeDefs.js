@@ -8,14 +8,11 @@ const typeDefs = gql`
     }
     type Movie {
         _id: ID
-        externalMovieId: Int
-        rating: Float
+        movieId: Int
         title: String
         overview: String
-        releaseDate: String
         poster: String
-        trailer: String
-        
+                
     }
     type User {
         _id: ID
@@ -33,18 +30,16 @@ const typeDefs = gql`
         movie(movieId: ID!): Movie
     }
     input MovieInput {
-        externalMovieId: Int
-        rating: Float
+        movieId: Int
         title: String
         overview: String
-        releaseDate: String
         poster: String
-        trailer: String
+        
     }
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        saveMovie(movieId: ID!): User
+        saveMovie(input: MovieInput!): User
         removeMovie(movieId: ID!): User
     }
 `;

@@ -7,22 +7,15 @@ export const GET_USER = gql`
             username
             email
             movieCount
-            savedmovies {
+            savedMovies {
                 _id
-                externalMovieId
-                rating
+                movieId
                 title
                 overview
-                releaseDate
                 poster
-                trailer
-            }
-            users {
-                _id
-                username
-                email
                 
             }
+            
         }
     }
 `;

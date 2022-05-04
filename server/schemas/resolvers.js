@@ -9,9 +9,7 @@ const resolvers = {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id})
                     .select('-__v -password')
-                    .populate('dislikedMovies')
-                    .populate('likedMovies');
-
+                    .populate('savedMovies')
                 return userData;
 
             }
@@ -29,8 +27,8 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
-                .populate('dislikedMovies')
-                    .populate( 'likedMovies');    
+                .populate('savedMovies')
+                   
         },
 
         // get a movie by its id
@@ -124,9 +122,13 @@ const resolvers = {
         saveMovie: async (parent, { input }, context) => {
 
             if (context.user) {
+                let movie = await Movie.findOne({movieId: input.movieId})
+                if (!movie) {
+                    movie = await Movie.create(input)
+                }
                   const updatedUser = await User.findByIdAndUpdate(
                       { _id: context.user._id },
-                      { $addToSet: { savedMovies: input } },
+                      { $push: { savedMovies: movie._id } },
                       { new: true }
                   );
                   return updatedUser;
@@ -174,7 +176,7 @@ const resolvers = {
                 const updatedUser = await User.findOneAndUpdate(
   
                     { _id: context.user._id },
-                    { $pull: { savedMovies: { movieId: args.movieId } } },
+                    { $pull: { savedMovies: args.movieId } },
                     { new: true }
   
                 );

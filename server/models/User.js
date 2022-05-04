@@ -26,20 +26,14 @@ const userSchema = new Schema(
         ref: 'User'
       }
     ],
-    likedMovies: [{
+    savedMovies: [{
       type: Schema.Types.ObjectId,
       ref: 'Movie',
       validate: (arr) => {
         return arr.filter(v => v === null).length === 0;
       }
     }],
-    dislikedMovies: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Movie',
-      validate: (arr) => {
-        return arr.filter(v => v === null).length === 0;
-      }
-    }], 
+   
 
   },
 

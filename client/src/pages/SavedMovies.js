@@ -41,7 +41,7 @@ const SavedMovies = () => {
 
     return (
         <>
-        <div class="container-fluid bg-dark text-light">
+        <div className="container-fluid bg-dark text-light">
             <Container>
                 <h1>Viewing saved movies!</h1>
             </Container>
@@ -49,21 +49,21 @@ const SavedMovies = () => {
         </div>
             <Container>
                 <h2>
-                    {userData.SavedMovies?.length 
-                    ? `Viewing ${userData.SavedMovies?.length} saved ${userData.SavedMovies?.length === 1 ? 'movie' : 'movies'}:` :
+                    {userData.savedMovies?.length 
+                    ? `Viewing ${userData.savedMovies?.length} saved ${userData.savedMovies?.length === 1 ? 'movie' : 'movies'}:` :
                     'You have not saved any movies'}
             
                 </h2>
                 <div>
-                    {userData.SavedMovies?.map((movie)=>{
+                    {userData.savedMovies?.map((movie)=>{
                         return(
                             <Card key={movie.movieId} border='dark'>
-                            {movie.image ? <Card.Img src={movie.image} alt={`The cover for ${movie.title}`} variant='top' /> : null}
+                            {movie.poster ? <Card.Img src={'https://image.tmdb.org/t/p/w500'+movie.poster} alt={`The cover for ${movie.title}`} variant='top' /> : null}
                                 <Card.Body>
                                     <Card.Title>{movie.title}</Card.Title>
-                                    <p className='small'>Authors: {movie.authors}</p>
-                                    <Card.Text>{movie.description}</Card.Text>
-                                    <Button className='btn-block btn-danger' onClick={() => handleDeleteMovie(movie.movieId)}>
+                                    
+                                    <Card.Text>{movie.overview}</Card.Text>
+                                    <Button className='btn-block btn-danger' onClick={() => handleDeleteMovie(movie._id)}>
                                     Delete this movie
                                     </Button>
 
