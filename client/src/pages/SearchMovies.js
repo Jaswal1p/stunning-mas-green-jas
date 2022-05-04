@@ -96,7 +96,7 @@ const SearchMovies = () => {
     return (
         <>
           {/* <div class="container-fluid bg-dark text-light"> */}
-          <Jumbotron fluid className='text-light bg-dark'>
+          <Jumbotron id="jumbotron" fluid className='text-light bg-secondary'>
             <Container>
 
               <h1>Search for Movies!</h1>
@@ -125,7 +125,7 @@ const SearchMovies = () => {
             </Jumbotron>
           {/* </div>  */}
 
-          <Container>
+          <Container id="midPage">
         <h2>
           {searchedMovies?.length
             ? `Viewing ${searchedMovies?.length} results:`
