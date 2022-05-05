@@ -48,3 +48,13 @@ The following must be installed to run this application.
 # Usage
 
 This is a front end application built with react. 
+
+# License
+> This project is licensed under the MIT license.
+>
+> Click the above link adjacent to badge to read further details
+
+# Contributing
+
+Contributors: Pupinder Jaswal, Mamona Masood, Zachary Greenfield
+
