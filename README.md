@@ -93,4 +93,4 @@ Zachary Greenfield: zackg007@verizon.net
     9. npm install jsonwebtoken
     10. npm install faker --save-dev followed by npm audit fix --force & followed by npm install --save-dev nodemon
 
-    (There are many more dependencies, listed in the package.jason file)
+    (There are many more dependencies, listed in the package.json file)
