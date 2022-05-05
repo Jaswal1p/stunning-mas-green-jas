@@ -16,7 +16,7 @@ const AppNavBar = () => {
 
     return (
       <>
-            <Navbar bg='dark' variant='dark' expand='lg'>
+            <Navbar bg='primary' id='navbarr' variant='dark' expand='lg'>
                <Container fluid>
                   <Navbar.Brand as={Link} to='/'>
                      TMDB Movies Search  
