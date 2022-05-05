@@ -4,6 +4,11 @@ export const searchTMDB = (query) => {
     return fetch(`https://api.themoviedb.org/3/search/movie?api_key=28b32ebda91943340a40b6a75fb02095&query=${query}`);
 };
 
+// export const getTrendingMovies = (time_window) => {
+//   return fetch(`https://api.themoviedb.org/3/trending/movie/${time_window}?api_key=28b32ebda91943340a40b6a75fb02095`);
+// };
+
+
 // This is the route to get logged in user's info from local storage (needs the token)
 export const getMe = (token) => {
     return fetch('/api/users/me', {

@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import SavedMovies from './pages/SavedMovies';
 import SearchMovies from './pages/SearchMovies';
+import Footer from './components/Footer';
 
 
 
@@ -49,15 +50,20 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <>
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={SearchMovies} />
+          <Navbar />
+          
+          <Switch>
+            <Route exact path='/' component={SearchMovies} />
 
-          <Route exact path='/saved' component={SavedMovies} />
+            <Route exact path='/saved' component={SavedMovies} />
 
-          <Route render={() => <h1 className='display-2'>Wrong Page</h1>} />
-        
+            <Route render={() => <h1 className='display-2'>Wrong Page</h1>} />
+          
           </Switch>
+          
+
+          <Footer />
+
         </>
       </Router>
 
