@@ -1,6 +1,6 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import { Container, Card, Button} from 'react-bootstrap';
+import { Container, Card, Button, CardColumns} from 'react-bootstrap';
 import {removeMovieId} from '../utils/localStorage';
 import {GET_USER} from '../utils/queries';
 import {useQuery, useMutation} from '@apollo/client';
@@ -47,14 +47,14 @@ const SavedMovies = () => {
             </Container>
             
         </div>
-            <Container>
+            <Container id="midPage">
                 <h2>
                     {userData.savedMovies?.length 
                     ? `Viewing ${userData.savedMovies?.length} saved ${userData.savedMovies?.length === 1 ? 'movie' : 'movies'}:` :
                     'You have not saved any movies'}
             
                 </h2>
-                <div>
+                <CardColumns>
                     {userData.savedMovies?.map((movie)=>{
                         return(
                             <Card key={movie.movieId} border='dark'>
@@ -71,7 +71,7 @@ const SavedMovies = () => {
                                 </Card>
                         );
                     })}
-                </div>
+                </CardColumns>
             </Container>
         </>
     );
