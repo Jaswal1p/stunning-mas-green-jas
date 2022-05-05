@@ -40,6 +40,7 @@ https://stunning-mas-green-jas.herokuapp.com/
 
 ![ScreenshotApplicationLocalHost](/assets/images/screen-shot-of-application-running-on-local-host.png)
 ![ScreenshotApplicationSavedMovies](/assets/images/screen-shot-of-saved-movies.png)
+![ScreenshotDeployedApplication](/assets/images/TMDB-Movie-Search-Deployed.png)
 
 
 
