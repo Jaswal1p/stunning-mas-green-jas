@@ -71,3 +71,9 @@ Pupinder Jaswal: Jaswal1p@yahoo.com
 Mamona Masood: 
 Zachary Greenfield: zackg007@verizon.net
 
+# Dependencies:
+    1. npx create-react-app wonderful-react-portfolio
+    2. npm install bootstrap
+    3. npm install @testing-library/react @testing-library/jest-dom --save-dev
+    4. npm install react-router-dom@5  (NOTE specifically the @5 version is needed for this project)
+    (There are many more dependencies, listed in the package.jason file)
