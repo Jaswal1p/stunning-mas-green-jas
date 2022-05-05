@@ -32,6 +32,7 @@ https://stunning-mas-green-jas.herokuapp.com/
 # Screenshots
 
 ![ScreenshotApplicationLocalHost](/assets/images/screen-shot-of-application-running-on-local-host.png)
+![ScreenshotApplicationSavedMovies](/assets/images/screen-shot-of-saved-movies.png)
 
 (here we will add 3-4 screenshots of deployed app showing various functions)
 
