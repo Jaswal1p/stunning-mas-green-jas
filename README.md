@@ -4,6 +4,13 @@
 [View License](https://opensource.org/licenses/MIT)
 
 # Description
+Our goal was to create a movie search page that would enable the user to search for movies and save them under a profile.
+We divided the project into sections starting with the server side with the apollo server express server, MongoDB, and express.js
+Then once we finished the server side we started working on the client side where we worked on version control which was the biggest challenged we faced.
+We met every day in order to share our work and save it to our develop branch so everyone started the next day with the latest changes.
+Once we finshed the client side we met in order to fix any bugs that came up before launching the build for the website on the local host.
+Once the MVP was ready we were able to successfully deploy the full application to Heroku on Tuesday.
+Finally, we worked on things such as giving the website a more polished look using CSS, adding a footer, and the README file.
 
 ![ScreenshotAcceptanceCriteria1](/assets/images/screen-shot-of-acceptance-criteria-for-project-3(1).png)
 ![ScreenshotAcceptanceCriteria2](/assets/images/screen-shot-of-acceptance-criteria-for-project-3(2).png)
@@ -34,7 +41,6 @@ https://stunning-mas-green-jas.herokuapp.com/
 ![ScreenshotApplicationLocalHost](/assets/images/screen-shot-of-application-running-on-local-host.png)
 ![ScreenshotApplicationSavedMovies](/assets/images/screen-shot-of-saved-movies.png)
 
-(here we will add 3-4 screenshots of deployed app showing various functions)
 
 
 # Installation
