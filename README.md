@@ -71,7 +71,7 @@ Zachary Greenfield: [yks2728](https://github.com/yks2728)
 You can also reach us via email.
 
 Pupinder Jaswal: Jaswal1p@yahoo.com
-Mamona Masood: 
+Mamona Masood: mamamonam4@yahoo.com
 Zachary Greenfield: zackg007@verizon.net
 
 # Dependencies:
