@@ -31,7 +31,7 @@ https://stunning-mas-green-jas.herokuapp.com/
 
 # Screenshots
 
-Initial deployment using local host, which shows page directly landing at 'about me' section, which is highlighted
+![ScreenshotApplicationLocalHost](/assets/images/screen-shot-of-application-running-on-local-host.png)
 
 (here we will add 3-4 screenshots of deployed app showing various functions)
 
