@@ -46,7 +46,14 @@ The following must be installed to run this application.
     5. React-router-dom
     6. react-scripts
     7. react-vitals
-
+    8. apollo-server-express
+    9. express.js
+    10. brcypt
+    11. mongoose
+    12. jsonwebtoken
+    13. faker
+    14. Nodemon
+    
 
 # Usage
 
