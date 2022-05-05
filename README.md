@@ -86,4 +86,11 @@ Zachary Greenfield: zackg007@verizon.net
     2. npm install bootstrap
     3. npm install @testing-library/react @testing-library/jest-dom --save-dev
     4. npm install react-router-dom@5  (NOTE specifically the @5 version is needed for this project)
+    5. npm install apollo-server-express graphql
+    6. npm install express
+    7. npm install bcrypt
+    8. npm install mongoose
+    9. npm install jsonwebtoken
+    10. npm install faker --save-dev followed by npm audit fix --force & followed by npm install --save-dev nodemon
+
     (There are many more dependencies, listed in the package.jason file)
