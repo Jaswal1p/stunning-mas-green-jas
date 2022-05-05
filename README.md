@@ -18,7 +18,7 @@
 * [Questions](#questions)
 
 
-# GitHub Respository Link
+# GitHub Repository Link
 
 https://github.com/Jaswal1p/stunning-mas-green-jas.git
 
@@ -33,3 +33,18 @@ Initial deployment using local host, which shows page directly landing at 'about
 (here we will add 3-4 screenshots of deployed app showing various functions)
 
 
+# Installation
+
+The following must be installed to run this application.
+    1. React
+    2. Bootstrap
+    3. Jest testing library
+    4. React-dom
+    5. React-router-dom
+    6. react-scripts
+    7. react-vitals
+
+
+# Usage
+
+This is a front end application built with react. 
