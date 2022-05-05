@@ -5,6 +5,8 @@
 
 # Description
 
+![ScreenshotAcceptanceCriteria1](/assets/images/screen-shot-of-acceptance-criteria-for-project-3(1).png)
+
 
 # Table of Contents
 
