@@ -58,3 +58,16 @@ This is a front end application built with react.
 
 Contributors: Pupinder Jaswal, Mamona Masood, Zachary Greenfield
 
+# Questions
+If you have any questions about the repo/project, please open an issue or contact by:
+
+Pupinder Jaswal: [Jaswal1p](https://github.com/Jaswal1p)
+Mamona Masood: [moon9588](https://github.com/moon9588)
+Zachary Greenfield: [yks2728](https://github.com/yks2728)
+
+You can also reach us via email.
+
+Pupinder Jaswal: Jaswal1p@yahoo.com
+Mamona Masood: 
+Zachary Greenfield: zackg007@verizon.net
+
